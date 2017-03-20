@@ -36,11 +36,18 @@ class TodosContainer extends Component {
       this.setState({todos})
     })
   }
+  editTodo(todo){
+    this.setState({
+      editingTodoId: todo.id
+    })
+  }
   render(){
     return (
     <div className="todosComponent">
       <Todos
         todos={this.state.todos}
+        editingTodoId={this.state.editingTodoId}
+        onEditTodo={this.editTodo.bind(this)}
         onDeleteTodo={this.deleteTodo.bind(this)} />
       <CreateTodoForm
         createTodo={this.createTodo.bind(this)} />

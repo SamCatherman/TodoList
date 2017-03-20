@@ -8,6 +8,8 @@ class Todos extends Component {
         <Todo
           key={todo.id}
           todo={todo}
+          editingTodoId={this.props.editingTodoId}
+          onEditTodo={this.props.onEditTodo}
           onDeleteTodo={this.props.onDeleteTodo}/>
       )
     })
